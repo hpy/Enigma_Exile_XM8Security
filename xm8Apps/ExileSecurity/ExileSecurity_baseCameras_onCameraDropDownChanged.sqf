@@ -29,7 +29,7 @@ CameraSelected = true;
 	_camera = (objectFromNetId _cameraNetId);
 	if!(_camera getVariable ["ExileCameraInUse",false])then
 	{
-    [_camera,isNull ExileClientCameraObject] call ExileSecurity_baseCamera_camAction;
+    [_camera,isNull ExileClientCameraObject] call ExileClient_gui_baseCamera_event_camAction;
 	  ExileClientCameraObject cameraEffect ["internal", "back", "rtt"];
 
 if !(ExileSecurityVisionMode == 1) then {

@@ -59,7 +59,6 @@ forEach
 		['ExileSecurity_AlarmTimer', 'xm8Apps\ExileSecurity\ExileSecurity_AlarmTimer.sqf'],
   	['ExileSecurity_baseCameras_onCameraDropDownChanged', 'xm8Apps\ExileSecurity\ExileSecurity_baseCameras_onCameraDropDownChanged.sqf'],
 		['ExileSecurity_baseCamera_event_onLoad', 'xm8Apps\ExileSecurity\ExileSecurity_baseCamera_event_onLoad.sqf'],
-		['ExileSecurity_baseCamera_camAction', 'xm8Apps\ExileSecurity\ExileSecurity_baseCamera_camAction.sqf'],
 		['ExileSecurity_onMouseMoving', 'xm8Apps\ExileSecurity\ExileSecurity_onMouseMoving.sqf'],
 		['ExileSecurity_onMouseButtonDown', 'xm8Apps\ExileSecurity\ExileSecurity_onMouseButtonDown.sqf'],
 		['ExileSecurity_onMouseButtonUp', 'xm8Apps\ExileSecurity\ExileSecurity_onMouseButtonUp.sqf'],
