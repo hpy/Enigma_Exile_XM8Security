@@ -1,9 +1,11 @@
 /*
   	Name: ExileSecurity_onConnectLoad.sqf
-  	Author: Happydayz - Enigma
+    Author: Happydayz - Enigma
     Copyright (c) 2016 Happydayz
     This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
     To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+    This work is built to work with Exile Mod for Arma 3 and as such contains code from that mod.
+    Huge thanks to Exile Devs for the fantastic work they have done with their Mod! 
 */
 
 
@@ -30,7 +32,7 @@ _MainCaptureArea = _display ctrlCreate ["RscListBox",7000];
 _MainCaptureArea ctrlSetPosition [0.076,0.084,34 * (0.025),18.95 * (0.04)];
 _MainCaptureArea ctrlCommit 0;
 _MainCaptureArea ctrlSetFade 0;
-_MainCaptureArea ctrlCommit 0; 
+_MainCaptureArea ctrlCommit 0;
 
 _MainCaptureArea ctrlAddEventHandler ["MouseMoving","_this call ExileSecurity_onMouseMoving;"];
 _MainCaptureArea ctrlAddEventHandler ["MouseButtonDown","_this call ExileSecurity_onMouseButtonDown;"];
@@ -60,7 +62,7 @@ _mainxm8display ctrlCommit 1;
 _RHMenuTxt = _display ctrlCreate ["RscStructuredText",5007];
 _RHMenuTxt ctrlSetStructuredText parseText format ["<t align='centre' size='1.6' color='#B2B2B2'>Select a Camera</t>"];
 _RHMenuTxt ctrlSetFade 1;
-_RHMenuTxt ctrlSetPosition [18.5 * (0.025) + (0), 11 * (0.04) + (0),30 * (0.025),10 * (0.04)]; 
+_RHMenuTxt ctrlSetPosition [18.5 * (0.025) + (0), 11 * (0.04) + (0),30 * (0.025),10 * (0.04)];
 _RHMenuTxt ctrlCommit 0;
 _RHMenuTxt ctrlSetFade 0;
 _RHMenuTxt ctrlCommit 0.50;
@@ -70,9 +72,9 @@ _RHMenuTxt ctrlCommit 0.50;
 
 _CameraList = _display ctrlCreate ["RscListBox", 6002];
 
-_CameraList  ctrlSetPosition [0.073,0.13,0,17.8 * (0.04)]; 
+_CameraList  ctrlSetPosition [0.073,0.13,0,17.8 * (0.04)];
 _CameraList ctrlCommit 0;
-_CameraList  ctrlSetPosition [0.073,0.13,8.2 * (0.025),17.8 * (0.04)]; 
+_CameraList  ctrlSetPosition [0.073,0.13,8.2 * (0.025),17.8 * (0.04)];
 _CameraList ctrlCommit 0.5;
 
 _CameraList ctrlSetEventHandler ["LBSelChanged", "_this call ExileSecurity_baseCameras_onCameraDropDownChanged;"];
@@ -84,17 +86,17 @@ _CameraList ctrlShow true;
 
 _MenuButton = _display ctrlCreate ["RscButton", 6004];
 _MenuButton ctrlSetEventHandler ["MouseButtonClick", "_this spawn ExileSecurity_MenuSlide;"];
-_MenuButton ctrlSetPosition [0.073, 11 * (0.04) + (0),1 * (0.025),2 * (0.04)]; 
+_MenuButton ctrlSetPosition [0.073, 11 * (0.04) + (0),1 * (0.025),2 * (0.04)];
 _MenuButton ctrlSetFade 1;
 _MenuButton ctrlCommit 0;
-_MenuButton ctrlSetPosition [11.05 * (0.025) + (0), 11 * (0.04) + (0),1 * (0.025),2 * (0.04)]; 
+_MenuButton ctrlSetPosition [11.05 * (0.025) + (0), 11 * (0.04) + (0),1 * (0.025),2 * (0.04)];
 _MenuButton ctrlCommit 0.5;
 _MenuButton ctrlShow true;
 _MenuImage = _display ctrlCreate ["RscPicture", 6003];
-_MenuImage ctrlSetPosition [0.073, 11 * (0.04) + (0),1 * (0.025),2 * (0.04)]; 
+_MenuImage ctrlSetPosition [0.073, 11 * (0.04) + (0),1 * (0.025),2 * (0.04)];
 _MenuImage ctrlCommit 0;
 _MenuImage ctrlSetText "xm8Apps\ExileSecurity\Images\SideMenu.paa";
-_MenuImage ctrlSetPosition [11.05 * (0.025) + (0), 11 * (0.04) + (0),1 * (0.025),2 * (0.04)]; 
+_MenuImage ctrlSetPosition [11.05 * (0.025) + (0), 11 * (0.04) + (0),1 * (0.025),2 * (0.04)];
 _MenuImage ctrlCommit 0.5;
 _MenuButton ctrlShow true;
 
@@ -103,18 +105,18 @@ _MenuButton ctrlShow true;
 
 _SettingsButton = _display ctrlCreate ["RscButton", 6005];
 _SettingsButton ctrlSetEventHandler ["MouseButtonClick", "[] spawn ExileSecurity_SettingsCreate;"];
-_SettingsButton ctrlSetPosition [0.073, 19.8 * (0.04) + (0),1.5 * (0.025),2 * (0.025)]; 
+_SettingsButton ctrlSetPosition [0.073, 19.8 * (0.04) + (0),1.5 * (0.025),2 * (0.025)];
 _SettingsButton ctrlSetFade 1;
 _SettingsButton ctrlCommit 0;
-_SettingsButton ctrlSetPosition [2.95 * (0.025) + (0), 19.8 * (0.04) + (0),1.5 * (0.025),2 * (0.025)]; 
+_SettingsButton ctrlSetPosition [2.95 * (0.025) + (0), 19.8 * (0.04) + (0),1.5 * (0.025),2 * (0.025)];
 _SettingsButton ctrlCommit 0.5;
 
 _SettingsImage = _display ctrlCreate ["RscPicture", 6006];
-_SettingsImage ctrlSetPosition [0.073, 19.8 * (0.04) + (0),1.5 * (0.025),2 * (0.025)]; 
+_SettingsImage ctrlSetPosition [0.073, 19.8 * (0.04) + (0),1.5 * (0.025),2 * (0.025)];
 _SettingsImage ctrlSetFade 1;
 _SettingsImage ctrlCommit 0;
 _SettingsImage ctrlSetText "\exile_assets\texture\ui\xm8_app_settings_ca.paa";
-_SettingsImage ctrlSetPosition [2.95 * (0.025) + (0), 19.8 * (0.04) + (0),1.5 * (0.025),2 * (0.025)]; 
+_SettingsImage ctrlSetPosition [2.95 * (0.025) + (0), 19.8 * (0.04) + (0),1.5 * (0.025),2 * (0.025)];
 _SettingsImage ctrlCommit 0.5;
 _SettingsImage ctrlSetFade 0;
 _SettingsImage ctrlCommit 1;
@@ -139,9 +141,8 @@ _VisionImage ctrlCommit 0.5;
 
 uisleep 0.2;
 
-call ExileSecurity_baseCamera_event_onLoad; 
+call ExileSecurity_baseCamera_event_onLoad;
 
 uisleep 2;
 _RHMenuTxt ctrlSetFade 1;
 _RHMenuTxt ctrlCommit 1;
-

@@ -1,10 +1,24 @@
 /*
   Name: ExileSecurity_Territory.sqf
   Author: Happydayz - Enigma
-    Copyright (c) 2016 Happydayz
-    This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
-    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+  Copyright (c) 2016 Happydayz
+  This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
+  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+  This work is built to work with Exile Mod for Arma 3 and as such contains code from that mod.
+  Huge thanks to Exile Devs for the fantastic work they have done with their Mod!
+
+  Enigma Logo Courtesy of Robin Inkysloth
+  https://www.flickr.com/photos/mysight/8132415082/in/photolist-doCKF9-7avPas-pbgQhY-ga3RFt-BaxHM-dbs52V-dc66Yd-7EfxUE-6b6jXU-4mKT24-dc5QT6-5d72yF-cM16xW-eVWGUK-sGDNU-7L6DYj-68eGPg-4LGnpz-Rcha4-6cBYMW-6fFqAg-CT3RG-7L2HQD-5Gpqz-7L6FpU-dc5j9s-eVWLyr-bPANWD-PEibz-HaRM8-8Gd8W8-4BfNM9-AiXpG-7PkYB-dbs64Q-5yXqQ6-319pZS-sVnv-uwPEj-7Rtodz-7MUVYV-4zyozE-7L2FJx-dsS86K-5F8wtu-obniuQ-4BfP3Y-dbrYy1-eVWSUM-dbs58p
+
+
 */
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////Do Not Edit///////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////Below This Line/////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 SecurityDebug = false;
 Alarmspamprotection = false;
@@ -18,7 +32,7 @@ Slidesettings = false;
 ExileSecurityVisionMode = 1;
 
 
-call ExileSecurity_onUnload; 
+call ExileSecurity_onUnload;
 
 _changeterritory = _this select 0;
 
@@ -35,9 +49,6 @@ if (isNil "_changeterritory") then {
 ctrlShow [4092, false];
 
 _esc = (findDisplay 24015) displayAddEventHandler ["KeyDown", "if(_this select 1 == 1)then{[] spawn ExileSecurity_ExitApp; ExileClientXM8CurrentSlide = 'apps';};"];
-
-
-
 
   _AppsArray = [991,881,992,882,993,883,994,884,995,885,996,886,997,887,998,888,999,889,9910,8810,9911,8811,9912,8812];
   {
@@ -57,10 +68,12 @@ _esc = (findDisplay 24015) displayAddEventHandler ["KeyDown", "if(_this select 1
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////Power Button///////////////////////////////////////////////////////////
 
+
 _PowerButton = (_display displayCtrl 4006);
 _PowerButton ctrlRemoveEventHandler ["ButtonClick",4006];
 uisleep 0.1;
 _PowerButton ctrlAddEventHandler ["ButtonClick","[] spawn ExileSecurity_togglePower"];
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////Intro Logo///////////////////////////////////////////////////////////
@@ -73,7 +86,8 @@ if !(SecurityDebug) then {
       _titlebar ctrlSetFade 1;
       _titlebar ctrlCommit 0.25;
 
-		playSound ["SndXM8PowerOn", true];
+
+    playSound ["SndXM8PowerOn", true];
 
 _backgroundSplash = _display ctrlCreate ["RscPicture", 6028];
 _backgroundSplash ctrlSetText "xm8Apps\ExileSecurity\Images\logo1.paa";
@@ -84,7 +98,7 @@ _backgroundSplash ctrlCommit 0;
 _backgroundSplash ctrlSetFade 0;
 _backgroundSplash ctrlCommit 1.750;
 
-		waitUntil {ctrlCommitted _backgroundSplash};
+    waitUntil {ctrlCommitted _backgroundSplash};
 
 _backgroundSplash3 = _display ctrlCreate ["RscPicture", 6029];
 _backgroundSplash3 ctrlSetText "xm8Apps\ExileSecurity\Images\logo3.paa";
@@ -95,7 +109,7 @@ _backgroundSplash3 ctrlSetFade 0;
 _backgroundSplash3 ctrlCommit 3;
 _backgroundSplash3 ctrlEnable false;
 
-		waitUntil {ctrlCommitted _backgroundSplash3};
+    waitUntil {ctrlCommitted _backgroundSplash3};
 
 _backgroundSplash ctrlSetFade 1;
 _backgroundSplash ctrlCommit 0;
@@ -103,17 +117,17 @@ _backgroundSplash ctrlCommit 0;
 _backgroundSplash3 ctrlSetFade 1.5;
 _backgroundSplash3 ctrlCommit 1;
 
-		waitUntil {ctrlCommitted _backgroundSplash3};
+    waitUntil {ctrlCommitted _backgroundSplash3};
 
 
 _controlsToShow = [4000,4001,4007,4060,4040,4120,4080,4070,4090,4100,4110,4130,4030];
 
-		{
-			_control = _display displayCtrl _x;
-			_control ctrlSetFade 0;
-			_control ctrlCommit 0;
-		}
-		forEach _controlsToShow;
+    {
+      _control = _display displayCtrl _x;
+      _control ctrlSetFade 0;
+      _control ctrlCommit 0;
+    }
+    forEach _controlsToShow;
 
 
 
@@ -129,18 +143,18 @@ _titlebarname ctrlSetFade 1;
 _titlebarname ctrlShow true;
 _titlebarname ctrlSetPosition  [5 * (0.025) + (0), 9 * (0.04) + (0),30 * (0.025),10 * (0.04)]; //center top positions
 
-		_titlebarname ctrlCommit 0;
-		_titlebarname ctrlSetFade 0;
-		_titlebarname ctrlCommit 0.250;
-		waitUntil {ctrlCommitted _titlebarname};
+    _titlebarname ctrlCommit 0;
+    _titlebarname ctrlSetFade 0;
+    _titlebarname ctrlCommit 0.250;
+    waitUntil {ctrlCommitted _titlebarname};
 
-		uiSleep 1;
+    uiSleep 1;
 
-		_titlebarname ctrlSetFade 1;
-		_titlebarname ctrlCommit 0.250;
-		waitUntil {ctrlCommitted _titlebarname};
-		_titlebarname ctrlShow false;
-		_titlebarname ctrlSetPosition [-1, -1];
+    _titlebarname ctrlSetFade 1;
+    _titlebarname ctrlCommit 0.250;
+    waitUntil {ctrlCommitted _titlebarname};
+    _titlebarname ctrlShow false;
+    _titlebarname ctrlSetPosition [-1, -1];
 
 };
 
@@ -155,11 +169,11 @@ uisleep 0.25;
 
       _titlebar ctrlSetFade 0;
       _titlebar ctrlCommit 0.25;
-	  _titlebar ctrlSetStructuredText (parseText (format ["<t align='center' font='RobotoMedium'>XM8 Security</t>"]));
+    _titlebar ctrlSetStructuredText (parseText (format ["<t align='center' font='RobotoMedium'>XM8 Security</t>"]));
 
 
-	ctrlDelete ((findDisplay 24015) displayCtrl 6028);
-	ctrlDelete ((findDisplay 24015) displayCtrl 6029);
+  ctrlDelete ((findDisplay 24015) displayCtrl 6028);
+  ctrlDelete ((findDisplay 24015) displayCtrl 6029);
 
 };
 
@@ -171,7 +185,7 @@ uisleep 0.25;
 
 if !(isNil "_changeterritory") then {
 
-				if (_changeterritory == 1) then {
+        if (_changeterritory == 1) then {
 
 
   _AppsArray = [5007,6002,6003,6004,6005,6006,6026,6027];
@@ -189,7 +203,7 @@ if !(isNil "_changeterritory") then {
   } forEach _AppsArray;
 
 
-  	};
+    };
 };
 
 uisleep 0.25;
@@ -210,7 +224,7 @@ _TerritoryLabel ctrlCommit 1;
 _TerritoryLabel ctrlEnable false;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////BackgroundFrame////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////BackgroundFrame/////////////////////////////////////////////////////////
 
 _BackgroundFrame = _display ctrlCreate ["RscFrame", 6021];
 _BackgroundFrame ctrlSetTextColor [1, 1, 1, 0.9];

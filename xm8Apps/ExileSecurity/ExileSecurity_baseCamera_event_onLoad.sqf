@@ -1,9 +1,12 @@
 /*
   	Name: ExileSecurity_baseCamera_event_onLoad.sqf
- 	Author: Happydayz - Enigma
-    Copyright (c) 2016 Happydayz
-    This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
-    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+		* Exile Mod
+	  * www.exilemod.com
+	  * © 2015 Exile Mod Team
+	  *
+	  * This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+	  * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+ 		* Modified by: Happydayz - Enigma
 */
 
 private["_display","_camerasCombo","_range","_cameras","_index"];

@@ -1,9 +1,12 @@
 /*
   	Name: ExileSecurity_baseTerritory_event_onLoad.sqf
- 	Author: Happydayz - Enigma
-    Copyright (c) 2016 Happydayz
-    This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
-    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+		* Exile Mod
+	  * www.exilemod.com
+	  * © 2015 Exile Mod Team
+	  *
+	  * This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+	  * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+ 		* Modified by: Happydayz - Enigma
 */
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////Controls////////////////////////////////////////////////////////////////
@@ -37,7 +40,7 @@ if !(_securityinstalled) then
 	_TerritoryList lbSetData [_index,"0"];
 	_TerritoryList lbSetPictureRight [_index,"\exile_assets\texture\ui\xm8_app_territory_ca.paa"];
 if !(SecurityDebug) then {
-_TerritoryList ctrlenable false; 
+_TerritoryList ctrlenable false;
 uisleep 2;
 _NoSecurity = _display ctrlCreate ["RscStructuredText",6022];
 _NoSecurity ctrlSetPosition  [14 * (0.025) + (0), 9.5 * (0.04) + (0),12 * (0.025),10 * (0.04)];
@@ -76,7 +79,7 @@ _LogoutText ctrlEnable false;
 	_TerritoryList lbSetData [_index,"0"];
 	_TerritoryList lbSetPictureRight [_index,"\exile_assets\texture\ui\xm8_app_territory_ca.paa"];
 
-	_index = _TerritoryList lbAdd ""; 
+	_index = _TerritoryList lbAdd "";
 	_TerritoryList lbSetData [_index,"1"];
 
 _playerUID = getPlayerUID player;
@@ -89,7 +92,7 @@ _playerUID = getPlayerUID player;
 		if !(_basecameras isEqualTo []) then {
 		_name = _flag getVariable ["ExileTerritoryName", ""];
 		_index = _TerritoryList lbAdd (format ["%1",_name]);
-		_TerritoryList lbSetTooltip [_index, (format ["%1 Cameras Installed",_countcameras])]; 
+		_TerritoryList lbSetTooltip [_index, (format ["%1 Cameras Installed",_countcameras])];
 		_TerritoryList lbSetData [_index, netId _flag];
 		};
 	};

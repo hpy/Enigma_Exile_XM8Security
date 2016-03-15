@@ -1,9 +1,12 @@
 /*
   	Name: ExileSecurity_baseCameras_onCameraDropDownChanged.sqf
- 	Author: Happydayz - Enigma
-    Copyright (c) 2016 Happydayz
-    This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
-    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+		* Exile Mod
+	  * www.exilemod.com
+	  * © 2015 Exile Mod Team
+	  *
+	  * This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+	  * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+ 		* Modified by: Happydayz - Enigma
 */
 disableSerialization;
 private["_cameraCombo","_index","_cameraNetId","_camera","_WeaponCombo","_WeaponNetId","_display","_titlebarname","_CameraDropDown"];
@@ -27,16 +30,16 @@ CameraSelected = true;
 	if!(_camera getVariable ["ExileCameraInUse",false])then
 	{
     [_camera,isNull ExileClientCameraObject] call ExileSecurity_baseCamera_camAction;
-	  ExileClientCameraObject cameraEffect ["internal", "back", "rtt"]; 
+	  ExileClientCameraObject cameraEffect ["internal", "back", "rtt"];
 
 if !(ExileSecurityVisionMode == 1) then {
 	ExileSecurityVisionMode = ExileSecurityVisionMode - 1;
-[] call ExileSecurity_VisionMode; 
+[] call ExileSecurity_VisionMode;
 } else {
 			if ((date select 3) < 6 or (date select 3) > 19) then {
 			"rtt" setPiPEffect [3, 1, 0.4, 0.8, 0.1, [0.3, 0.3, 0.3, -0.1], [1.0, 0.0, 1.0, 1.0], [0, 0, 0, 0]];
 		} else {
-		"rtt" setPiPEffect [3, 1, 1, 0.9, 0.1, [0.3, 0.3, 0.3, -0.1], [1.0, 0.0, 1.0, 1.0], [0, 0, 0, 0]]; 
+		"rtt" setPiPEffect [3, 1, 1, 0.9, 0.1, [0.3, 0.3, 0.3, -0.1], [1.0, 0.0, 1.0, 1.0], [0, 0, 0, 0]];
 	};
 };
     ExileCameraViewMouseZFoV = 0.7;

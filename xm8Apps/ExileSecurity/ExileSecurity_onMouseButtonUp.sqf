@@ -1,9 +1,12 @@
 /*
   	Name: ExileSecurity_onMouseButtonUp.sqf
- 	Author: Happydayz - Enigma
-    Copyright (c) 2016 Happydayz
-    This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
-    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+		* Exile Mod
+	  * www.exilemod.com
+	  * © 2015 Exile Mod Team
+	  *
+	  * This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+	  * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+ 		* Modified by: Happydayz - Enigma
 */
 
 private["_control","_rightClick","_positionX","_positionY","_inScreen"];
@@ -21,4 +24,3 @@ if ((slidemenu == 0) && (CameraSelected)) exitWith {[] spawn ExileSecurity_MenuS
 	};
 };
 true
-

@@ -1,9 +1,10 @@
 /*
-    Name: ExileSecurity_AlarmLights.sqf
-    Author: Happydayz - Enigma
-    Copyright (c) 2016 Happydayz
-    This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
-    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+    Original File: fn_copLights.sqf
+    Author: [GSN] Pager & [GSN] Paronity
+    Website: GSNGaming.com
+    Date Created: 2.24.2015
+    Modified Name: ExileSecurity_AlarmLights.sqf
+    Modified by: Happydayz - Enigma
 */
 
 

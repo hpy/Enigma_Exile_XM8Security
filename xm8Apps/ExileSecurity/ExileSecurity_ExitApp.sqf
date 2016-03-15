@@ -1,9 +1,11 @@
 /*
   	Name: ExileSecurity_ExitApp.sqf
- 	Author: Happydayz - Enigma
+    Author: Happydayz - Enigma
     Copyright (c) 2016 Happydayz
     This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
     To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+    This work is built to work with Exile Mod for Arma 3 and as such contains code from that mod.
+    Huge thanks to Exile Devs for the fantastic work they have done with their Mod! 
 */
 _gotoxm8apps = _this select 0;
 
@@ -11,9 +13,9 @@ disableSerialization;
 
 _display = uiNameSpace getVariable ["RscExileXM8", displayNull];
 _AppsArray = [
-5007, 
-7000, 
-7001, 
+5007,
+7000,
+7001,
 6000,
 6001,
 6002,

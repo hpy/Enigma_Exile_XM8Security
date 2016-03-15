@@ -1,6 +1,8 @@
 # Enigma_Exile_XM8Security
 Exile XM8 Security App
 
+Built using Exile Code for use inside Exile!
+
 
 Changelog:
 
@@ -46,7 +48,7 @@ and _app1Logo and app1_action variable names!)
 //App 1
 _app1Text = "XM8Security";
 _app1Logo = "xm8Apps\ExileSecurity\Images\ExileSecurity.paa";
-app1_action = {[] spawn {call ExileSecurity}};
+app1_action = {[] spawn ExileSecurity_Territory};
 
 
 
