@@ -1,6 +1,10 @@
 # Enigma_Exile_XM8Security
 Exile XM8 Security App
 
+
+NO LONGER SUPPORTED! Feel free to make it work with the latest version of Exile and Push commits!
+
+
 Built using Exile Code for use inside Exile!
 
 
